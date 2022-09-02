@@ -24,6 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # This is a required field for CodeGuru
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
